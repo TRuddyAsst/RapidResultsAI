@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - RapidResults AI</title>
+    <meta name="description" content="Get in touch with RapidResults AI. Contact our team for demos, pricing, or support with our autonomous voice agent solutions for inbound and outbound calls.">
+    <meta name="keywords" content="AI call agents contact, inbound AI receptionist demo, outbound lead generation pricing, AI appointment setting consultation">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='url(%23gradient)'/><path d='M30 50 L70 50 M40 35 L60 35 M40 65 L60 65' stroke='white' stroke-width='6' stroke-linecap='round'/><defs><linearGradient id='gradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%232196F3'/><stop offset='100%25' style='stop-color:%2300E676'/></linearGradient></defs></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Neural Networks Color Scheme */
+            --primary: #2196F3;        /* Vibrant Blue */
+            --secondary: #00E676;      /* Neon Green */
+            --accent: #C0C0C0;         /* Silver Chrome */
+            --dark: #0A0A0A;           /* Deep Black */
+            --light: #FFFFFF;          /* Pure White */
+            --gray: #1A1A1A;          /* Dark Gray */
+            --text-light: #E5E7EB;    /* Light text for dark backgrounds */
+            
+            /* Gradients */
+            --gradient: linear-gradient(135deg, #2196F3 0%, #00E676 100%);
+            --chrome-gradient: linear-gradient(135deg, #C0C0C0 0%, #E8E8E8 50%, #C0C0C0 100%);
+            --neural-gradient: linear-gradient(45deg, #2196F3 0%, #00E676 25%, #C0C0C0 50%, #2196F3 75%, #00E676 100%);
+            --dark-gradient: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Neural network background pattern */
+        .neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.02;
+            background-image: 
+                radial-gradient(circle at 20% 80%, #2196F3 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, #00E676 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, #C0C0C0 0%, transparent 50%);
+            animation: neuralFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes neuralFloat {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            33% { transform: scale(1.1) rotate(120deg); }
+            66% { transform: scale(0.9) rotate(240deg); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(33, 150, 243, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.5));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+            text-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+            border: 1px solid rgba(33, 150, 243, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(33, 150, 243, 0.6);
+            filter: brightness(1.1);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-light);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 120px 2rem 80px;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(33, 150, 243, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(0, 230, 118, 0.1) 0%, transparent 50%);
+            animation: neuralPulse 6s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes neuralPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+            33% { transform: scale(1.1) rotate(120deg); opacity: 0.4; }
+            66% { transform: scale(0.9) rotate(240deg); opacity: 0.8; }
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--neural-gradient);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: neuralShift 4s ease-in-out infinite, fadeInUp 0.8s ease;
+        }
+
+        @keyframes neuralShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .contact-header p {
+            font-size: 1.25rem;
+            color: #4A5568;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: linear-gradient(145deg, var(--light), #F8F9FA);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 
+                0 15px 35px rgba(33, 150, 243, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(33, 150, 243, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(33, 150, 243, 0.2);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 2px 8px rgba(33, 150, 243, 0.05);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 
+                0 0 0 3px rgba(33, 150, 243, 0.1),
+                0 4px 15px rgba(33, 150, 243, 0.2);
+            transform: translateY(-1px);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.3);
+            border: 1px solid rgba(0, 230, 118, 0.2);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* Response Time */
+        .response-time {
+            background: var(--dark-gradient);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-radius: 20px;
+            border: 1px solid rgba(33, 150, 243, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .response-time::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(33, 150, 243, 0.1), transparent);
+            animation: scanLine 3s ease-in-out infinite;
+        }
+
+        @keyframes scanLine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .response-time h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        .response-time p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Trust indicator */
+        .trust-indicator {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(33, 150, 243, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(33, 150, 243, 0.1);
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .trust-indicator .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-text {
+            color: #6B7280;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gradient);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            border-top: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-email {
+            color: white;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 600;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease both;
+        }
+
+        /* Success message */
+        .success-message {
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.1), rgba(0, 230, 118, 0.05));
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            color: var(--dark);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            display: none;
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.2);
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="neural-bg"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="30" height="30" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="url(#gradient)"/>
+                    <path d="M30 50 L70 50 M40 35 L60 35 M40 65 L60 65" stroke="white" stroke-width="6" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2196F3"/>
+                            <stop offset="100%" style="stop-color:#00E676"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                RapidResults AI
+            </div>
+              <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+                <a href="#demo" class="cta-button">Book Demo</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h1>Ready to Never Miss Another Call?</h1>
+                <p>Tell us about your business needs and we'll show you how RapidResults AI can handle your inbound calls and generate outbound leads 24/7.</p>
+            </div>
+
+            <div class="trust-indicator">
+                <h4 style="color: var(--dark); margin-bottom: 1rem; font-size: 1.25rem;">Join businesses already using AI call agents</h4>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-text">Call Coverage</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">85%*</span>
+                        <span class="stat-text">Won't Call Back</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3-7</span>
+                        <span class="stat-text">Days Setup</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Get Your Custom Demo</h2>
+                <div id="success-message" class="success-message">
+                    ✅ <strong>Thank you!</strong> We've received your information and will be in touch within one business day to schedule your personalized demo.
+                </div>
+                <form id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Business Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" placeholder="Your business name">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <select id="industry" name="industry">
+                                <option value="">Select your industry</option>
+                                <option value="healthcare">Healthcare & Medical</option>
+                                <option value="finance">Finance & Insurance</option>
+                                <option value="real-estate">Real Estate</option>
+                                <option value="service-business">Home Services (Plumbing, HVAC, etc.)</option>
+                                <option value="professional-services">Professional Services</option>
+                                <option value="automotive">Automotive</option>
+                                <option value="education">Education</option>
+                                <option value="e-commerce">E-commerce & Retail</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="call-volume">Monthly Call Volume</label>
+                            <select id="call-volume" name="call-volume">
+                                <option value="">Estimate monthly calls</option>
+                                <option value="under-100">Under 100 calls</option>
+                                <option value="100-500">100-500 calls</option>
+                                <option value="500-1000">500-1,000 calls</option>
+                                <option value="1000-5000">1,000-5,000 calls</option>
+                                <option value="5000+">5,000+ calls</option>
+                                <option value="not-sure">Not sure</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service-interest">What interests you most?</label>
+                        <select id="service-interest" name="service-interest">
+                            <option value="">Select primary interest</option>
+                            <option value="inbound-only">Inbound Call Handling Only</option>
+                            <option value="outbound-only">Outbound Lead Generation Only</option>
+                            <option value="both">Both Inbound & Outbound Services</option>
+                            <option value="appointment-setting">Appointment Setting Focus</option>
+                            <option value="customer-service">Customer Service & Support</option>
+                            <option value="lead-qualification">Lead Qualification</option>
+                            <option value="not-sure">Not sure - need consultation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tell us about your current call challenges *</label>
+                        <textarea id="message" name="message" placeholder="Describe your current situation: Are you missing calls? Need more leads? Looking to automate appointment booking? What's your biggest phone-related challenge?" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">🚀 Get My Custom Demo & Pricing</button>
+                </form>
+            </div>
+
+            <div class="response-time">
+                <h3>⚡ Lightning-Fast Response</h3>
+                <p>We'll review your information and get back to you within one business day with a custom demo tailored to your industry and needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="mailto:hello@rapidresults-ai.com" class="footer-email">
+                hello@rapidresults-ai.com
+            </a>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RapidResults AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // Show success message
+            const successMessage = document.getElementById('success-message');
+            successMessage.classList.add('show');
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 10 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 10000);
+        });
+
+        // Enhanced form interactions
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.transform = 'translateY(-1px)';
+                this.style.boxShadow = '0 0 0 3px rgba(33, 150, 243, 0.1), 0 4px 15px rgba(33, 150, 243, 0.2)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 2px 8px rgba(33, 150, 243, 0.05)';
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Enhanced neural effects on form interaction
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 20px 45px rgba(33, 150, 243, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        contactForm.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '0 15px 35px rgba(33, 150, 243, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+            this.style.transform = 'translateY(0)';
+        });
+
+        // Add floating animation to trust indicators
+        const statItems = document.querySelectorAll('.stat-item');
+        statItems.forEach((item, index) => {
+            item.style.animation = `fadeInUp 0.8s ease ${0.9 + index * 0.1}s both`;
+        });
+    </script>
+</body>
+</html>

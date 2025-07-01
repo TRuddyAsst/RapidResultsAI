@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - RapidResults AI</title>
+    <meta name="description" content="Privacy Policy for RapidResults AI - How we protect and handle your data in our AI voice agent services.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%232196F3'/><path d='M30 50 L70 50 M40 35 L60 35 M40 65 L60 65' stroke='white' stroke-width='6' stroke-linecap='round'/></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Neural Networks Color Scheme - Matching Homepage */
+            --primary: #2196F3;        /* Vibrant Blue */
+            --secondary: #00E676;      /* Neon Green */
+            --accent: #C0C0C0;         /* Silver Chrome */
+            --dark: #0A0A0A;           /* Deep Black */
+            --light: #FFFFFF;          /* Pure White */
+            --gray: #1A1A1A;          /* Dark Gray */
+            --text-light: #E5E7EB;    /* Light text for dark backgrounds */
+            
+            /* Gradients */
+            --gradient: linear-gradient(135deg, #2196F3 0%, #00E676 100%);
+            --chrome-gradient: linear-gradient(135deg, #C0C0C0 0%, #E8E8E8 50%, #C0C0C0 100%);
+            --neural-gradient: linear-gradient(45deg, #2196F3 0%, #00E676 25%, #C0C0C0 50%, #2196F3 75%, #00E676 100%);
+            --dark-gradient: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Neural network background pattern */
+        .neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.02;
+            background-image: 
+                radial-gradient(circle at 20% 80%, #2196F3 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, #00E676 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, #C0C0C0 0%, transparent 50%);
+            animation: neuralFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes neuralFloat {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            33% { transform: scale(1.1) rotate(120deg); }
+            66% { transform: scale(0.9) rotate(240deg); }
+        }
+
+        /* Navigation - Matching Homepage */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(33, 150, 243, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.5));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+            text-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+            border: 1px solid rgba(33, 150, 243, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(33, 150, 243, 0.6);
+            filter: brightness(1.1);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-light);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--neural-gradient);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: neuralShift 4s ease-in-out infinite;
+        }
+
+        @keyframes neuralShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .page-header p {
+            font-size: 1.125rem;
+            color: #4A5568;
+        }
+
+        .last-updated {
+            background: rgba(33, 150, 243, 0.05);
+            border: 1px solid rgba(33, 150, 243, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #6B7280;
+        }
+
+        .content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(33, 150, 243, 0.1);
+            border: 1px solid rgba(33, 150, 243, 0.1);
+        }
+
+        .content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        .content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: rgba(33, 150, 243, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.1);
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #EF4444;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.05), rgba(0, 230, 118, 0.05));
+            border: 1px solid rgba(33, 150, 243, 0.2);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .data-table th,
+        .data-table td {
+            border: 1px solid rgba(33, 150, 243, 0.2);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .data-table th {
+            background: rgba(33, 150, 243, 0.05);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Enhanced Footer - Matching Homepage */
+        footer {
+            background: var(--dark-gradient);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            border-top: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-email {
+            color: white;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 600;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .main-content {
+                padding: 100px 1rem 2rem;
+            }
+
+            .content {
+                padding: 2rem 1.5rem;
+            }
+
+            .content p {
+                text-align: left;
+            }
+
+            .data-table {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="neural-bg"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg width="30" height="30" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="url(#gradient)"/>
+                    <path d="M30 50 L70 50 M40 35 L60 35 M40 65 L60 65" stroke="white" stroke-width="6" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2196F3"/>
+                            <stop offset="100%" style="stop-color:#00E676"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                RapidResults AI
+            </a>
+              <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+                <a href="#demo" class="cta-button">Book Demo</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Privacy Policy</h1>
+            <p>How we protect and handle your data in our AI voice agent services</p>
+        </div>
+
+        <div class="last-updated">
+            <strong>Last Updated:</strong> June 2025
+        </div>
+
+        <div class="content">
+            <h2>1. Introduction</h2>
+            <p>At RapidResults AI, we understand that your privacy and the privacy of your customers is critically important to you. We are committed to protecting the privacy of personally-identifiable information and call data as you use our voice AI services. This Privacy Policy explains how we protect and use the information that we gather from you and through our services.</p>
+
+            <p>By using our website and services, you consent to the terms described in the most recent version of this Privacy Policy. You should also read our Terms of Service to understand the general rules about your use of our services.</p>
+
+            <div class="highlight-box">
+                <strong>For Voice AI Services:</strong> This policy covers both your business data and any customer data processed through our AI voice agents, including call recordings, transcripts, and interaction analytics.
+            </div>
+
+            <h3>Definitions</h3>
+            <p>For purposes of this Privacy Policy:</p>
+            <ul>
+                <li><strong>"We," "our," or "us"</strong> means RapidResults AI and its affiliates</li>
+                <li><strong>"You," "your," or "Client"</strong> means the business or individual using our services</li>
+                <li><strong>"End Users"</strong> means your customers who interact with our AI voice agents</li>
+                <li><strong>"Call Data"</strong> means recordings, transcripts, and metadata from voice interactions</li>
+                <li><strong>"Personal Information"</strong> means information that identifies an individual</li>
+            </ul>
+
+            <h2>2. Information We Collect</h2>
+
+            <h3>2.1 Information You Provide Directly</h3>
+            <p>We collect personal information from you in a variety of ways, including:</p>
+            <ul>
+                <li>When you create an account or subscribe to our services</li>
+                <li>When you configure your AI voice agents and business settings</li>
+                <li>When you integrate our services with your CRM or other business systems</li>
+                <li>When you contact us for support or inquiries</li>
+                <li>When you participate in surveys, webinars, or other communications</li>
+            </ul>
+
+            <h3>2.2 Call Data and Voice Interactions</h3>
+            <p>Our AI voice agents process and may record:</p>
+            <ul>
+                <li><strong>Call recordings:</strong> Audio recordings of conversations between our AI and end users</li>
+                <li><strong>Call transcripts:</strong> Text versions of voice conversations</li>
+                <li><strong>Interaction metadata:</strong> Call duration, time, phone numbers, and conversation outcomes</li>
+                <li><strong>Customer information:</strong> Names, contact details, and preferences shared during calls</li>
+                <li><strong>Business data:</strong> Appointment details, product inquiries, and service requests</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>Important:</strong> Call recording laws vary by jurisdiction. You are responsible for ensuring compliance with applicable laws, including obtaining proper consent for call recording where required.
+            </div>
+
+            <h3>2.3 Technical Information</h3>
+            <p>We automatically collect certain technical information, including:</p>
+            <ul>
+                <li>IP addresses and device information</li>
+                <li>Browser type and operating system</li>
+                <li>Usage patterns and service performance metrics</li>
+                <li>Integration data from connected business systems</li>
+            </ul>
+
+            <h2>3. How We Use Your Information</h2>
+
+            <h3>3.1 Service Provision</h3>
+            <p>RapidResults AI uses the information we collect to:</p>
+            <ul>
+                <li>Provide and maintain our AI voice agent services</li>
+                <li>Process customer calls and execute requested actions (appointments, inquiries, etc.)</li>
+                <li>Integrate with your business systems (CRM, calendars, etc.)</li>
+                <li>Generate analytics and reports on call performance</li>
+                <li>Provide customer support and technical assistance</li>
+            </ul>
+
+            <h3>3.2 AI Training and Improvement</h3>
+            <p>We may use aggregated and de-identified call data to:</p>
+            <ul>
+                <li>Train and improve our AI models for better conversation quality</li>
+                <li>Develop new features and capabilities</li>
+                <li>Enhance speech recognition and natural language processing</li>
+                <li>Improve service reliability and performance</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>AI Training:</strong> Personal information is removed or anonymized before use in AI training. We implement technical safeguards to prevent AI models from memorizing personal data.
+            </div>
+
+            <h3>3.3 Business Operations</h3>
+            <p>We also use your information for:</p>
+            <ul>
+                <li>Billing and account management</li>
+                <li>Communication about service updates and new features</li>
+                <li>Compliance with legal and regulatory requirements</li>
+                <li>Fraud prevention and security monitoring</li>
+            </ul>
+
+            <h2>4. Data Sharing and Disclosure</h2>
+
+            <h3>4.1 No Sale of Personal Information</h3>
+            <p>RapidResults AI will not sell, exchange, or publish your personal information or call data to unrelated third parties for commercial purposes.</p>
+
+            <h3>4.2 Service Providers</h3>
+            <p>We may share information with trusted service providers who assist us in:</p>
+            <ul>
+                <li>Cloud hosting and infrastructure services</li>
+                <li>Payment processing and billing</li>
+                <li>Customer support and technical assistance</li>
+                <li>Security and fraud prevention</li>
+            </ul>
+            <p>All service providers are contractually bound to protect your information and use it only for providing services to us.</p>
+
+            <h3>4.3 Business Integrations</h3>
+            <p>With your explicit consent, we may share relevant data with:</p>
+            <ul>
+                <li>Your CRM systems and business applications</li>
+                <li>Calendar and scheduling platforms</li>
+                <li>Analytics and business intelligence tools</li>
+                <li>Other business systems you choose to connect</li>
+            </ul>
+
+            <h3>4.4 Legal Requirements</h3>
+            <p>We may disclose information when required by law, including:</p>
+            <ul>
+                <li>In response to court orders, subpoenas, or legal processes</li>
+                <li>To comply with regulatory requirements</li>
+                <li>To protect our rights, property, or safety</li>
+                <li>To investigate fraud or security incidents</li>
+            </ul>
+
+            <h2>5. Data Security and Protection</h2>
+
+            <h3>5.1 Security Measures</h3>
+            <p>We implement industry-standard security measures to protect your information:</p>
+            <ul>
+                <li><strong>Encryption:</strong> Data is encrypted in transit and at rest</li>
+                <li><strong>Access Controls:</strong> Strict authentication and authorization protocols</li>
+                <li><strong>Network Security:</strong> Firewalls, intrusion detection, and monitoring</li>
+                <li><strong>Regular Audits:</strong> Security assessments and vulnerability testing</li>
+                <li><strong>Staff Training:</strong> Security awareness and data handling protocols</li>
+            </ul>
+
+            <h3>5.2 Data Retention</h3>
+            <p>We retain different types of data for varying periods:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Retention Period</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Call Recordings</td>
+                        <td>90 days (configurable)</td>
+                        <td>Quality assurance, dispute resolution</td>
+                    </tr>
+                    <tr>
+                        <td>Call Transcripts</td>
+                        <td>1 year</td>
+                        <td>Analytics, service improvement</td>
+                    </tr>
+                    <tr>
+                        <td>Account Information</td>
+                        <td>Duration of service + 7 years</td>
+                        <td>Business records, compliance</td>
+                    </tr>
+                    <tr>
+                        <td>Usage Analytics</td>
+                        <td>2 years</td>
+                        <td>Service optimization</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>6. International Data Transfers</h2>
+            <p>Our services may involve transferring data across international borders for:</p>
+            <ul>
+                <li>Cloud hosting and data processing</li>
+                <li>AI model training and improvement</li>
+                <li>Customer support and technical services</li>
+            </ul>
+
+            <p>We ensure appropriate safeguards are in place for international transfers, including:</p>
+            <ul>
+                <li>Standard Contractual Clauses (SCCs) where applicable</li>
+                <li>Adequacy decisions by relevant data protection authorities</li>
+                <li>Other legally recognized transfer mechanisms</li>
+            </ul>
+
+            <h2>7. Your Rights and Choices</h2>
+
+            <h3>7.1 Access and Control</h3>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> Request copies of your personal information</li>
+                <li><strong>Correction:</strong> Update or correct inaccurate information</li>
+                <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+                <li><strong>Portability:</strong> Receive your data in a structured, machine-readable format</li>
+                <li><strong>Restriction:</strong> Limit how we process your information</li>
+            </ul>
+
+            <h3>7.2 Call Recording Consent</h3>
+            <p>You can configure whether our AI voice agents:</p>
+            <ul>
+                <li>Record calls for quality and training purposes</li>
+                <li>Announce recording to callers</li>
+                <li>Obtain explicit consent before recording</li>
+                <li>Provide opt-out mechanisms for end users</li>
+            </ul>
+
+            <h3>7.3 Marketing Communications</h3>
+            <p>You may opt out of marketing communications at any time by:</p>
+            <ul>
+                <li>Using unsubscribe links in emails</li>
+                <li>Updating your account preferences</li>
+                <li>Contacting our support team</li>
+            </ul>
+
+            <h2>8. Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar technologies on our website to:</p>
+            <ul>
+                <li>Remember your preferences and settings</li>
+                <li>Analyze website usage and performance</li>
+                <li>Provide personalized content and features</li>
+                <li>Enable security features and fraud prevention</li>
+            </ul>
+
+            <p>You can control cookies through your browser settings, though some features may not function properly if cookies are disabled.</p>
+
+            <h2>9. Third-Party Services</h2>
+            <p>Our website and services may contain links to third-party websites or integrate with third-party services. This Privacy Policy does not apply to those external services. We encourage you to review the privacy policies of any third-party services you use.</p>
+
+            <h2>10. Children's Privacy</h2>
+            <p>RapidResults AI services are designed for business use and are not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+
+            <h2>11. California Privacy Rights (CCPA)</h2>
+            <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):</p>
+            <ul>
+                <li>Right to know what personal information is collected</li>
+                <li>Right to delete personal information</li>
+                <li>Right to opt-out of the sale of personal information</li>
+                <li>Right to non-discrimination for exercising privacy rights</li>
+            </ul>
+
+            <h2>12. European Privacy Rights (GDPR)</h2>
+            <p>If you are in the European Economic Area, you have rights under the General Data Protection Regulation (GDPR), including those outlined in Section 7 above, plus the right to lodge a complaint with your local data protection authority.</p>
+
+            <h2>13. Changes to This Privacy Policy</h2>
+            <p>RapidResults AI reserves the right to modify this Privacy Policy at any time. Any changes will be posted on this page, and if the changes are material, we will provide notice through our services or other appropriate means. Please review this Privacy Policy periodically for any updates.</p>
+
+            <h2>14. Contact Information</h2>
+            <div class="contact-info">
+                <h3>Privacy Questions or Requests</h3>
+                <p>If you have any questions about this Privacy Policy or wish to exercise your privacy rights, please contact us at:</p>
+                <p>
+                    <strong>RapidResults AI</strong><br>
+                    <strong>Data Protection Officer</strong><br>
+                    Email: <a href="mailto:privacy@rapidresults-ai.com">privacy@rapidresults-ai.com</a><br>                  
+                </p>
+                <p><em>For general support inquiries, please contact <a href="mailto:hello@rapidresults-ai.com">hello@rapidresults-ai.com</a></em></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="mailto:hello@rapidresults-ai.com" class="footer-email">
+                hello@rapidresults-ai.com
+            </a>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RapidResults AI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
