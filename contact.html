@@ -311,6 +311,12 @@
             filter: brightness(1.1);
         }
 
+        .submit-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         /* Response Time */
         .response-time {
             background: var(--dark-gradient);
@@ -505,21 +511,52 @@
             animation: fadeInUp 0.8s ease both;
         }
 
-        /* Success message */
-        .success-message {
-            background: linear-gradient(135deg, rgba(0, 230, 118, 0.1), rgba(0, 230, 118, 0.05));
-            border: 1px solid rgba(0, 230, 118, 0.3);
-            color: var(--dark);
+        /* Success/Error message styles */
+        .form-message {
             padding: 1rem;
             border-radius: 12px;
             margin-bottom: 1rem;
             display: none;
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .success-message.show {
+        .form-message.show {
             display: block;
             animation: fadeInUp 0.5s ease;
+        }
+
+        .form-message.success {
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.1), rgba(0, 230, 118, 0.05));
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            color: var(--dark);
+        }
+
+        .form-message.error {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: var(--dark);
+        }
+
+        /* Loading state */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(33, 150, 243, 0.2), transparent);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
     </style>
 </head>
@@ -585,18 +622,33 @@
 
             <div class="contact-form">
                 <h2>Get Your Custom Demo</h2>
-                <div id="success-message" class="success-message">
+                
+                <!-- Success/Error Messages -->
+                <div id="success-message" class="form-message success">
                     ✅ <strong>Thank you!</strong> We've received your information and will be in touch within one business day to schedule your personalized demo.
                 </div>
-                <form id="contact-form">
+                
+                <div id="error-message" class="form-message error">
+                    ❌ <strong>Oops!</strong> There was an error submitting your form. Please try again or email us directly at hello@rapidresults-ai.com.
+                </div>
+
+                <!-- Formspree Integration -->
+                <form id="contact-form" action="https://formspree.io/f/mblywelw" method="POST">
+                    <!-- Honeypot field for spam protection -->
+                    <input type="text" name="_gotcha" style="display:none" />
+                    
+                    <!-- Formspree configuration -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - RapidResults AI" />
+                    <input type="hidden" name="_next" value="#success" />
+                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="first-name">First Name *</label>
-                            <input type="text" id="first-name" name="first-name" required>
+                            <input type="text" id="first-name" name="first_name" required>
                         </div>
                         <div class="form-group">
                             <label for="last-name">Last Name *</label>
-                            <input type="text" id="last-name" name="last-name" required>
+                            <input type="text" id="last-name" name="last_name" required>
                         </div>
                     </div>
                     
@@ -634,7 +686,7 @@
                         </div>
                         <div class="form-group">
                             <label for="call-volume">Monthly Call Volume</label>
-                            <select id="call-volume" name="call-volume">
+                            <select id="call-volume" name="call_volume">
                                 <option value="">Estimate monthly calls</option>
                                 <option value="under-100">Under 100 calls</option>
                                 <option value="100-500">100-500 calls</option>
@@ -648,7 +700,7 @@
                     
                     <div class="form-group">
                         <label for="service-interest">What interests you most?</label>
-                        <select id="service-interest" name="service-interest">
+                        <select id="service-interest" name="service_interest">
                             <option value="">Select primary interest</option>
                             <option value="inbound-only">Inbound Call Handling Only</option>
                             <option value="outbound-only">Outbound Lead Generation Only</option>
@@ -665,7 +717,9 @@
                         <textarea id="message" name="message" placeholder="Describe your current situation: Are you missing calls? Need more leads? Looking to automate appointment booking? What's your biggest phone-related challenge?" required></textarea>
                     </div>
                     
-                    <button type="submit" class="submit-button">🚀 Get My Custom Demo & Pricing</button>
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        🚀 Get My Custom Demo & Pricing
+                    </button>
                 </form>
             </div>
 
@@ -698,31 +752,64 @@
     </footer>
 
     <script>
-        // Form submission handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        // Form submission handling with Formspree integration
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-            
-            // Show success message
+            const form = this;
+            const submitBtn = document.getElementById('submit-btn');
             const successMessage = document.getElementById('success-message');
-            successMessage.classList.add('show');
+            const errorMessage = document.getElementById('error-message');
             
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Hide any previous messages
+            successMessage.classList.remove('show');
+            errorMessage.classList.remove('show');
             
-            // Reset form
-            this.reset();
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '⏳ Sending...';
+            submitBtn.classList.add('loading');
             
-            // Hide success message after 10 seconds
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 10000);
+            try {
+                // Submit to Formspree
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success
+                    successMessage.classList.add('show');
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    form.reset();
+                    
+                    // Hide success message after 10 seconds
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 10000);
+                } else {
+                    // Error
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Show error message
+                errorMessage.classList.add('show');
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Hide error message after 8 seconds
+                setTimeout(() => {
+                    errorMessage.classList.remove('show');
+                }, 8000);
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '🚀 Get My Custom Demo & Pricing';
+                submitBtn.classList.remove('loading');
+            }
         });
 
         // Enhanced form interactions
@@ -769,6 +856,18 @@
         statItems.forEach((item, index) => {
             item.style.animation = `fadeInUp 0.8s ease ${0.9 + index * 0.1}s both`;
         });
+
+        // Check URL hash for success state (if Formspree redirects back)
+        if (window.location.hash === '#success') {
+            document.getElementById('success-message').classList.add('show');
+            // Scroll to message
+            setTimeout(() => {
+                document.getElementById('success-message').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }, 500);
+        }
     </script>
 </body>
 </html>
