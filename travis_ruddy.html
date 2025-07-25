@@ -224,25 +224,29 @@
             z-index: 1;
         }
 
-        .qr-placeholder {
+        /* QR Code Container */
+        .qr-container {
             width: 120px;
             height: 120px;
             margin: 0 auto 1rem;
-            background: linear-gradient(145deg, #F8F9FA, var(--light));
-            border: 2px dashed rgba(33, 150, 243, 0.3);
+            background: white;
             border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--primary);
+            padding: 10px;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
+            border: 1px solid rgba(33, 150, 243, 0.1);
             transition: all 0.3s ease;
         }
 
-        .qr-placeholder:hover {
-            border-color: var(--secondary);
-            background: linear-gradient(145deg, rgba(0, 230, 118, 0.05), rgba(33, 150, 243, 0.05));
+        .qr-container:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(33, 150, 243, 0.3);
+        }
+
+        .qr-code {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         .qr-text {
@@ -303,9 +307,10 @@
                 font-size: 0.9rem;
             }
 
-            .qr-placeholder {
+            .qr-container {
                 width: 100px;
                 height: 100px;
+                padding: 8px;
             }
         }
 
@@ -370,8 +375,8 @@
 
         <!-- QR Code Section -->
         <div class="qr-section">
-            <div class="qr-placeholder">
-                <span>📱</span>
+            <div class="qr-container">
+                <img src="travis-qr-code.png" alt="Scan to connect with Travis Ruddy" class="qr-code" />
             </div>
             <p class="qr-text">Scan to save contact & visit website</p>
             
