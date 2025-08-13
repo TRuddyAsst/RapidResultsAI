@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - RapidResults AI</title>
+    <meta name="description" content="Terms of Service for RapidResults AI - AI Voice Agents for inbound call handling and outbound lead generation. Review our terms and conditions.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%232196F3'/><path d='M30 50 L70 50 M40 35 L60 35 M40 65 L60 65' stroke='white' stroke-width='6' stroke-linecap='round'/></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Neural Networks Color Scheme - matching homepage */
+            --primary: #2196F3;        /* Vibrant Blue */
+            --secondary: #00E676;      /* Neon Green */
+            --accent: #C0C0C0;         /* Silver Chrome */
+            --dark: #0A0A0A;           /* Deep Black */
+            --light: #FFFFFF;          /* Pure White */
+            --gray: #1A1A1A;          /* Dark Gray */
+            --text-light: #E5E7EB;    /* Light text for dark backgrounds */
+            
+            /* Gradients */
+            --gradient: linear-gradient(135deg, #2196F3 0%, #00E676 100%);
+            --chrome-gradient: linear-gradient(135deg, #C0C0C0 0%, #E8E8E8 50%, #C0C0C0 100%);
+            --neural-gradient: linear-gradient(45deg, #2196F3 0%, #00E676 25%, #C0C0C0 50%, #2196F3 75%, #00E676 100%);
+            --dark-gradient: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation - matching homepage */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(33, 150, 243, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.5));
+            text-decoration: none;
+        }
+.logo img {
+    height: 55px;
+    width: auto;
+    filter: drop-shadow(0 0 50px rgba(33, 150, 243, 1));
+}
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+            text-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+            border: 1px solid rgba(33, 150, 243, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(33, 150, 243, 0.6);
+            filter: brightness(1.1);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-light);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+/* Mobile menu states */
+.nav-links.mobile-open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    gap: 1.5rem;
+    box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
+    border-bottom: 1px solid rgba(33, 150, 243, 0.2);
+    z-index: 999;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+        /* Main Content */
+        .main-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-header p {
+            font-size: 1.125rem;
+            color: #6B7280;
+        }
+
+        .last-updated {
+            background: rgba(33, 150, 243, 0.05);
+            border: 1px solid rgba(33, 150, 243, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #6B7280;
+        }
+
+        .content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.1);
+            border: 1px solid rgba(33, 150, 243, 0.05);
+        }
+
+        .content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        .content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: rgba(33, 150, 243, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .dual-service-box {
+            background: var(--dark-gradient);
+            color: var(--text-light);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 230, 118, 0.3);
+        }
+
+        .contact-info {
+            background: rgba(33, 150, 243, 0.05);
+            border: 1px solid rgba(33, 150, 243, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gradient);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            border-top: 1px solid rgba(33, 150, 243, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-email {
+            color: white;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 600;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .main-content {
+                padding: 100px 1rem 2rem;
+            }
+
+            .content {
+                padding: 2rem 1.5rem;
+            }
+
+            .content p {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+    <img src="https://raw.githubusercontent.com/TRuddyAsst/RapidResultsAI/main/images/logo.png" alt="RapidResults AI" height="55">
+    RapidResults AI
+</a>
+              <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="brochure.html">About Us</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="cta-button">Book Demo</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Terms of Service</h1>
+            <p>Please read these terms carefully before using RapidResults AI services</p>
+        </div>
+
+        <div class="last-updated">
+            <strong>Last Updated:</strong> July 2025
+        </div>
+
+        <div class="content">
+            <h2>1. Acceptance of Terms</h2>
+            <p>This website and platform (the "Service") is owned and operated by RapidResults AI ("COMPANY," "we," or "us"). By using the Service, you agree to be bound by these Terms of Service and to use the Service in accordance with these Terms of Service, our Privacy Policy, and any additional terms and conditions that may apply to specific sections of the Service or to products and services available through RapidResults AI.</p>
+
+            <p>Accessing the Service, in any manner—whether automated or otherwise—constitutes your use of the Service and your agreement to be bound by these Terms of Service.</p>
+
+            <div class="highlight-box">
+                <strong>Important:</strong> We reserve the right to change these Terms of Service or to impose new conditions on use of the Service from time to time, in which case we will post the revised Terms of Service on this website. By continuing to use the Service after we post any such changes, you accept the modified Terms of Service.
+            </div>
+
+            <h2>2. Description of Service</h2>
+            <p>RapidResults AI provides comprehensive artificial intelligence-powered voice agent services that handle both inbound and outbound call operations for businesses. Our dual-service platform includes:</p>
+
+            <div class="dual-service-box">
+                <h3 style="color: var(--secondary); margin-top: 0;">🔵 Inbound Call Handling Services:</h3>
+                <ul style="color: var(--text-light);">
+                    <li>24/7 AI receptionists that answer all incoming calls</li>
+                    <li>Appointment scheduling and calendar integration</li>
+                    <li>Lead qualification and customer data capture</li>
+                    <li>Call routing and customer support handling</li>
+                    <li>Emergency call processing and escalation</li>
+                    <li>Integration with CRM systems and business tools</li>
+                </ul>
+
+                <h3 style="color: var(--secondary); margin-top: 1.5rem;">🚀 Outbound Lead Generation Services:</h3>
+                <ul style="color: var(--text-light);">
+                    <li>Proactive lead generation and prospect outreach</li>
+                    <li>Appointment setting with qualified prospects</li>
+                    <li>Follow-up campaigns and lead nurturing calls</li>
+                    <li>Customer re-engagement and retention calls</li>
+                    <li>Survey and feedback collection campaigns</li>
+                    <li>Pipeline management and lead tracking</li>
+                </ul>
+            </div>
+
+            <p>Additional features include analytics and reporting, custom voice training, business-specific configurations, and comprehensive compliance management for all calling activities.</p>
+
+            <h2>3. Intellectual Property Rights</h2>
+            <p>This Service and all the materials available on the Service are the property of RapidResults AI and/or our affiliates or licensors and are protected by copyright, trademark, and other intellectual property laws. The Service is provided solely for your authorized business use as specified in your subscription agreement.</p>
+
+            <p>You may not use the Service or any materials available on the Service in any manner that infringes on our rights or that has not been expressly authorized by us. Specifically, unless explicitly authorized in these Terms of Service or by separate agreement, you may not modify, copy, reproduce, republish, upload, post, transmit, translate, sell, create derivative works from, exploit, or distribute in any manner or medium any proprietary technology, algorithms, or AI models from the Service.</p>
+
+            <h2>4. User Content and Data</h2>
+            <p>By using our Service, you may provide various types of data and content, including:</p>
+            <ul>
+                <li>Business information and customer contact data</li>
+                <li>Prospect lists and lead generation targets</li>
+                <li>Call recordings, transcripts, and conversation logs</li>
+                <li>Custom scripts for both inbound and outbound campaigns</li>
+                <li>Voice training materials and business-specific responses</li>
+                <li>Integration data from CRM, calendar, and business systems</li>
+                <li>Campaign parameters and calling preferences</li>
+            </ul>
+
+            <h3>Data Ownership and Privacy</h3>
+            <p>You retain ownership of your business data, customer information, and prospect lists. However, you grant us a limited license to use this data to provide the Service, including training and improving our AI models to better serve your business needs and optimize both inbound call handling and outbound campaign performance. All data handling is subject to our Privacy Policy and applicable data protection regulations.</p>
+
+            <h3>Data Security and Compliance</h3>
+            <p>We implement industry-standard security measures to protect your data, including encryption, access controls, and regular security audits. We comply with relevant regulations including GDPR, CCPA, HIPAA (where applicable to your business), TCPA, and telecommunications regulations governing both inbound and outbound calling activities.</p>
+
+            <h2>5. Acceptable Use Policy</h2>
+            <p>You agree to use the Service only for lawful business purposes and in compliance with all applicable regulations. You may not use the Service to:</p>
+
+            <h3>General Prohibited Uses:</h3>
+            <ul>
+                <li>Violate any applicable laws or regulations</li>
+                <li>Harass, abuse, or harm individuals through automated calling</li>
+                <li>Impersonate other businesses or individuals</li>
+                <li>Interfere with or disrupt the Service or our servers</li>
+                <li>Attempt to gain unauthorized access to the Service or other users' accounts</li>
+                <li>Use the Service for any fraudulent or deceptive practices</li>
+            </ul>
+
+            <h3>Outbound Calling Specific Restrictions:</h3>
+            <div class="highlight-box">
+                <strong>TCPA and Compliance Requirements:</strong>
+                <ul>
+                    <li>Make unauthorized calls to numbers on the Do Not Call Registry</li>
+                    <li>Call individuals without proper consent or opt-in</li>
+                    <li>Make calls outside of permitted calling hours (8am-9pm local time)</li>
+                    <li>Use the Service for illegal telemarketing or robocalling activities</li>
+                    <li>Call wireless numbers without express written consent</li>
+                    <li>Engage in predictive dialing without human intervention</li>
+                    <li>Fail to provide proper caller identification and opt-out mechanisms</li>
+                </ul>
+            </div>
+
+            <h2>6. Outbound Calling Compliance and Responsibilities</h2>
+            <p>For outbound lead generation and calling services, you acknowledge and agree that:</p>
+
+            <h3>Your Compliance Responsibilities:</h3>
+            <ul>
+                <li>You are responsible for ensuring all prospect data and calling lists comply with TCPA regulations</li>
+                <li>You must obtain proper consent before adding contacts to outbound campaigns</li>
+                <li>You must maintain Do Not Call scrubbing and opt-out management</li>
+                <li>You are responsible for honoring all opt-out requests immediately</li>
+                <li>You must comply with state and federal calling time restrictions</li>
+                <li>You must provide accurate caller ID and contact information</li>
+            </ul>
+
+            <h3>Our Compliance Support:</h3>
+            <ul>
+                <li>We provide automated Do Not Call Registry scrubbing</li>
+                <li>We enforce calling time restrictions based on recipient time zones</li>
+                <li>We maintain call logs and compliance documentation</li>
+                <li>We implement automatic opt-out handling and list management</li>
+                <li>We provide TCPA-compliant calling practices and procedures</li>
+            </ul>
+
+            <div class="dual-service-box">
+                <strong>Important Notice:</strong> Violations of TCPA or other telecommunications regulations can result in significant fines and legal consequences. You are ultimately responsible for ensuring your use of our outbound calling services complies with all applicable laws and regulations.
+            </div>
+
+            <h2>7. Service Availability and Performance</h2>
+            <p>While we strive to provide reliable, 24/7 service availability for both inbound call answering and outbound campaign execution, we do not guarantee uninterrupted access to the Service. Scheduled maintenance, emergency repairs, or circumstances beyond our control may result in temporary service interruptions.</p>
+
+            <div class="highlight-box">
+                <strong>Service Level Agreement:</strong> We aim to maintain 99.9% uptime for our core voice agent services, including both inbound call handling and outbound campaign operations. Specific SLA terms may be outlined in your subscription agreement.
+            </div>
+
+            <h2>8. Billing and Payment Terms</h2>
+            <p>Payment terms are specified in your subscription agreement. Generally:</p>
+            <ul>
+                <li>Subscription fees are billed monthly or annually in advance</li>
+                <li>Usage-based charges (inbound call minutes, outbound call minutes, lead generation activities) are billed monthly in arrears</li>
+                <li>Setup and customization fees may apply for complex implementations</li>
+                <li>All fees are non-refundable unless otherwise specified</li>
+                <li>We reserve the right to suspend service for non-payment after appropriate notice</li>
+                <li>Outbound campaign costs may vary based on call volume, success rates, and campaign complexity</li>
+            </ul>
+
+            <h2>9. AI Performance and Limitations</h2>
+            <p>Our AI voice agents are designed to provide human-like interactions for both inbound and outbound calling. However, you should be aware that:</p>
+            <ul>
+                <li>AI responses may not always be perfect or handle every possible scenario</li>
+                <li>Complex customer issues may require human intervention or escalation</li>
+                <li>Outbound lead generation results may vary based on industry, target audience, and market conditions</li>
+                <li>You should review and approve AI-generated content and scripts before deployment</li>
+                <li>Our models improve over time as the technology improves and can improve based on your feedback</li>
+                <li>We implement safeguards to ensure AI responses remain appropriate and professional</li>
+                <li>Lead generation performance is influenced by factors beyond our control, including prospect responsiveness and market conditions</li>
+            </ul>
+
+            <h2>10. Limitation of Liability</h2>
+            <p>THE SERVICE IS PROVIDED "AS IS" AND WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMISSIBLE UNDER APPLICABLE LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+            <p>UNDER NO CIRCUMSTANCES SHALL RAPIDRESULTS AI BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES RESULTING FROM THE USE OF OR THE INABILITY TO USE THE SERVICE, INCLUDING BUT NOT LIMITED TO:</p>
+            <ul>
+                <li>Lost business opportunities or missed calls</li>
+                <li>Revenue loss from failed lead generation campaigns</li>
+                <li>Compliance violations or regulatory fines resulting from your use of the Service</li>
+                <li>Inaccurate lead qualification or appointment scheduling errors</li>
+                <li>Technical failures affecting call quality or campaign delivery</li>
+                <li>Third-party integrations or service dependencies</li>
+            </ul>
+
+            <p>EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT PAID BY YOU FOR THE SERVICE IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.</p>
+
+            <h2>11. Indemnification</h2>
+            <p>You agree to defend, indemnify, and hold harmless RapidResults AI, its affiliates, successors, transferees, assignees, and licensees—and their respective parent and subsidiary companies, agents, associates, officers, directors, shareholders, and employees—from and against any and all claims, actions, damages, liabilities, costs, and expenses (including legal fees) arising out of or related to:</p>
+            <ul>
+                <li>Your use of the Service for both inbound and outbound calling</li>
+                <li>Your violation of these Terms of Service</li>
+                <li>Your violation of any rights of another party</li>
+                <li>Content, prospect lists, or calling data you provide through the Service</li>
+                <li>TCPA violations or other regulatory compliance failures</li>
+                <li>Unauthorized calling or lead generation activities</li>
+                <li>Misrepresentation of your business or offerings through our Service</li>
+            </ul>
+
+            <h2>12. Termination</h2>
+            <p>Either party may terminate the Service agreement with appropriate notice as specified in your subscription agreement. We may immediately terminate or suspend your access to the Service if you violate these Terms of Service, particularly regarding compliance violations or prohibited use activities.</p>
+
+            <p>Upon termination:</p>
+            <ul>
+                <li>You are no longer authorized to access the Service</li>
+                <li>All ongoing inbound and outbound campaigns will be immediately suspended</li>
+                <li>We will provide reasonable assistance in data export during a transition period</li>
+                <li>You remain responsible for any outstanding fees or charges</li>
+                <li>Compliance obligations continue for any activities conducted during the service period</li>
+            </ul>
+
+            <h2>13. Compliance and Regulatory Matters</h2>
+            <p>Our Service is designed to comply with telecommunications regulations, including:</p>
+            <ul>
+                <li>Telephone Consumer Protection Act (TCPA) for both inbound and outbound calling</li>
+                <li>Federal Trade Commission Do Not Call Registry requirements</li>
+                <li>State and federal calling regulations and time restrictions</li>
+                <li>GDPR and CCPA data protection requirements</li>
+                <li>HIPAA compliance for healthcare-related calling (where applicable)</li>
+                <li>CAN-SPAM Act for any related electronic communications</li>
+                <li>International calling compliance where applicable</li>
+                <li>Industry-specific regulations (healthcare, finance, real estate, etc.)</li>
+            </ul>
+
+            <p>You are responsible for ensuring your use of the Service complies with all applicable regulations in your jurisdiction and industry, particularly regarding outbound calling and lead generation activities.</p>
+
+            <h2>14. Lead Generation and Results Disclaimer</h2>
+            <div class="highlight-box">
+                <strong>No Guarantee of Results:</strong> While our AI agents are designed to maximize lead generation effectiveness and appointment setting success, we make no guarantees regarding specific outcomes, conversion rates, or business results. Lead generation performance depends on numerous factors including industry conditions, target audience quality, market timing, and your business offerings.
+            </div>
+
+            <h2>15. Governing Law</h2>
+            <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of Ohio, without regard to its conflict of law provisions. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts of Ohio.</p>
+
+            <h2>16. Entire Agreement</h2>
+            <p>These Terms of Service, together with our Privacy Policy and any executed subscription agreement, constitute the entire agreement between you and RapidResults AI regarding the use of the Service and supersede all prior agreements and understandings.</p>
+
+            <h2>17. Contact Information</h2>
+            <div class="contact-info">
+                <h3>Questions About These Terms?</h3>
+                <p>If you have any questions or concerns regarding these Terms of Service, please contact us at:</p>
+                <p>
+                    <strong>RapidResults AI</strong><br>
+                    Email: <a href="mailto:info@rapidresults.tech">info@rapidresults.tech</a><br>
+                                        
+                </p>
+                <p><em>For general support inquiries, demo requests, or questions about our inbound and outbound AI voice services, please contact <a href="mailto:info@rapidresults.tech">info@rapidresults.tech</a></em></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="mailto:mailto:info@rapidresults.tech" class="footer-email">
+                info@rapidresults.tech
+            </a>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RapidResults AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script>
+        // Mobile menu toggle functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        console.log('Mobile menu toggle found:', !!mobileMenuToggle);
+        console.log('Nav links found:', !!navLinks);
+
+        if (mobileMenuToggle && navLinks) {
+            mobileMenuToggle.addEventListener('click', function() {
+                console.log('Mobile menu clicked');
+                
+                // Toggle the mobile menu
+                navLinks.classList.toggle('mobile-open');
+                mobileMenuToggle.classList.toggle('active');
+                
+                console.log('Mobile menu toggled');
+            });
+
+            // Close mobile menu when clicking nav links
+            const navLinkItems = navLinks.querySelectorAll('a');
+            navLinkItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('mobile-open');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+</script>
+
+</body>
+</html>
