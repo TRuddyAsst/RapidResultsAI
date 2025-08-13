@@ -98,6 +98,12 @@
             filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.5));
         }
 
+        .logo img {
+    height: 55px;
+    width: auto;
+    filter: drop-shadow(0 0 50px rgba(33, 150, 243, 1));
+}
+
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -1514,18 +1520,11 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <svg width="30" height="30" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" fill="url(#gradient)"/>
-                    <path d="M30 50 L70 50 M40 35 L60 35 M40 65 L60 65" stroke="white" stroke-width="6" stroke-linecap="round"/>
-                    <defs>
-                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#2196F3"/>
-                            <stop offset="100%" style="stop-color:#00E676"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                RapidResults AI
-            </div>
+    <img src="https://raw.githubusercontent.com/TRuddyAsst/RapidResultsAI/main/RRAI_logo.png" 
+     alt="RapidResults AI" 
+     height="55"
+     onerror="this.style.display='none'">
+</div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="brochure.html">About Us</a>
