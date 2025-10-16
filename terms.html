@@ -368,7 +368,43 @@
                 text-align: left;
             }
         }
-    </style>
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(10, 10, 10, 0.98);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(33, 150, 243, 0.4);
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    border: 1px solid rgba(33, 150, 243, 0.3);
+    z-index: 1001;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: var(--gradient);
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}    
+</style>
 </head>
 <body>
     <!-- Navigation -->
@@ -379,7 +415,13 @@
     </a>
               <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="brochure.html">About Us</a>
+                <div class="dropdown">
+    <a href="brochure.html">About Us</a>
+    <div class="dropdown-content">
+        <a href="meet-travis.html">Meet Travis</a>
+        <a href="values.html">Values & Mission</a>
+    </div>
+</div>
                 <a href="index.html#pricing">Pricing</a>
                 <a href="contact.html">Contact</a>
                 <a href="https://cal.com/team/rapid-results-ai/discovery-call" target="_blank" class="cta-button">Book Demo</a>
