@@ -379,40 +379,43 @@
             <div class="qr-container">
                 <img src="travis-qr-code.png" alt="Scan to connect with Travis Ruddy" class="qr-code" />
             </div>
-            <p class="qr-text">Scan to save contact & visit website</p>
+            <p class="qr-text">Travis Ruddy Business Card</p>
             
             <!-- Save Contact Button -->
-            <a href="#" class="save-contact" onclick="downloadVCard()">
+            <a href="javascript:void(0);" class="save-contact" onclick="downloadVCard()" type="button">
                 💾 Save to Contacts
             </a>
         </div>
     </div>
 
     <script>
-        // Function to generate and download vCard
-        function downloadVCard() {
-            const vCardData = `BEGIN:VCARD
+        // Function to generate and download vCard (fixed version)
+function downloadVCard() {
+    const vCardData = `BEGIN:VCARD
 VERSION:3.0
 FN:Travis Ruddy
 N:Ruddy;Travis;;;
 ORG:RapidResults AI
 TITLE:President
 EMAIL:travis@rapidresults.tech
-TEL:+19378150008
+TEL;TYPE=WORK,VOICE:+19378150008
 URL:https://rapidresults.tech
 NOTE:Autonomous Voice Agents That Actually Convert - 24/7 AI Call Solutions
 END:VCARD`;
 
-            const blob = new Blob([vCardData], { type: 'text/vcard' });
-            const url = window.URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'Travis_Ruddy_RapidResults_AI.vcf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
-        }
+    // Use the more compatible vCard file type
+    const blob = new Blob([vCardData], { type: 'text/x-vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Travis_Ruddy_RapidResults_AI.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+}
 
         // Add some interactive effects
         document.addEventListener('DOMContentLoaded', function() {
